@@ -48,7 +48,7 @@ install --directory %{buildroot}%{_libdir}/zabbix/modules/
 install --directory %{buildroot}/etc/zabbix/zabbix_agentd.d
 
 install -m 0755 %{_builddir}/zabbix-%{version}/%{module_dir}/%{name}/zbx_sockstat.so %{buildroot}%{_libdir}/zabbix/modules/
-install -m 0644 %{_topdir}/SOURCES/zabbix-agent-sockstat.conf                             %{buildroot}/etc/zabbix/zabbix_agentd.d/
+install -m 0644 %{_topdir}/SOURCES/zbx_sockstat.conf                             %{buildroot}/etc/zabbix/zabbix_agentd.d/
 
 %clean
 rm -rf %{buildroot}

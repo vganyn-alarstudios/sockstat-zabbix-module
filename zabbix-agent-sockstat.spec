@@ -12,7 +12,7 @@ License:    GPLv2+
 URL: 		https://github.com/vicendominguez/sockstat-zabbix-module
 VCS:        git+git@github.com:vganyn-alarstudios/sockstat-zabbix-module.git#:
 
-Source:     sockstat-zabbix-module-bf07b044-dirty.tar.gz
+Source:     sockstat-zabbix-module-9160129c-dirty.tar.gz
 Source1:    zbx_sockstat.c
 Source2:    Makefile
 
@@ -48,7 +48,7 @@ install --directory %{buildroot}%{_libdir}/zabbix/modules/
 install --directory %{buildroot}/etc/zabbix/zabbix_agentd.d
 
 install -m 0755 %{_builddir}/zabbix-%{version}/%{module_dir}/%{name}/zbx_sockstat.so %{buildroot}%{_libdir}/zabbix/modules/
-install -m 0644 %{_topdir}/SOURCES/zabbix-agent-sockstat.conf                             %{buildroot}/etc/zabbix/zabbix_agentd.d/
+install -m 0644 %{_topdir}/SOURCES/zbx_sockstat.conf                             %{buildroot}/etc/zabbix/zabbix_agentd.d/
 
 %clean
 rm -rf %{buildroot}
