@@ -2,7 +2,7 @@
 %define     minor_version 12
 %define     module_dir    src/modules
 
-Name:       {{{ git_dir_name }}}
+Name:       sockstat-zabbix-module
 Version:    %{main_version}.%{minor_version}
 Release:    1%{?dist}
 Summary:    Agent module for zabbix for network sockets status
@@ -10,9 +10,9 @@ Summary:    Agent module for zabbix for network sockets status
 Group:      Applications/Internet
 License:    GPLv2+
 URL: 		https://github.com/vicendominguez/sockstat-zabbix-module
-VCS:        {{{ git_dir_vcs }}}
+VCS:        git+git@github.com:vganyn-alarstudios/sockstat-zabbix-module.git#:
 
-Source:     {{{ git_dir_pack }}}
+Source:     sockstat-zabbix-module-bf07b044-dirty.tar.gz
 Source1:    zbx_sockstat.c
 Source2:    Makefile
 
@@ -29,7 +29,7 @@ Info: https://github.com/vicendominguez/sockstat-zabbix-module
 %global debug_package %{nil}
 
 %prep
-{{{ git_dir_setup_macro }}}
+%setup -q -n sockstat-zabbix-module
 curl -o /tmp/zbx.rpm https://repo.zabbix.com/zabbix/%{main_version}/rhel/%{?rhel}/SRPMS/zabbix-%{version}-1.el%{?rhel}.src.rpm
 rpm -i /tmp/zbx.rpm
 %setup -qTcn zabbix-%{version}
