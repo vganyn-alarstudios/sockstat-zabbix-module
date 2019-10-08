@@ -10,9 +10,8 @@ Summary:    Agent module for zabbix for network sockets status
 Group:      Applications/Internet
 License:    GPLv2+
 URL: 		https://github.com/vicendominguez/sockstat-zabbix-module
-VCS:        git+git@github.com:vganyn-alarstudios/sockstat-zabbix-module.git#:
+VCS:        git+git@github.com:vganyn-alarstudios/sockstat-zabbix-module.git#3d5d36a1bf80b98a5c9e85bf36b3506e112bb5ef:
 
-Source:     sockstat-zabbix-module-9160129c-dirty.tar.gz
 Source1:    zbx_sockstat.c
 Source2:    Makefile
 
@@ -34,7 +33,7 @@ curl -o /tmp/zbx.rpm https://repo.zabbix.com/zabbix/%{main_version}/rhel/%{?rhel
 rpm -i /tmp/zbx.rpm
 %setup -qTcn zabbix-%{version}
 tar --strip-components=1 -xf %{_topdir}/SOURCES/zabbix-%{version}.tar.gz
-echo 'LoadModule=zbx_sockstat.so' > %{_topdir}/SOURCES/zabbix-agent-sockstat.conf
+echo 'LoadModule=zbx_sockstat.so' > %{_topdir}/SOURCES/zbx_sockstat.conf
 
 %build
 %configure
@@ -55,7 +54,7 @@ rm -rf %{buildroot}
 
 %files
 /%{_libdir}/zabbix/modules/
-/etc/zabbix/zabbix_agentd.d/zabbix-agent-sockstat.conf
+/etc/zabbix/zabbix_agentd.d/zbx_sockstat.conf
 
 %post
 /usr/bin/systemctl try-restart zabbix-agent.service >/dev/null 2>&1 || :
