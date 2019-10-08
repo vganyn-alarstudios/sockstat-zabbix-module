@@ -10,8 +10,9 @@ Summary:    Agent module for zabbix for network sockets status
 Group:      Applications/Internet
 License:    GPLv2+
 URL: 		https://github.com/vicendominguez/sockstat-zabbix-module
-VCS:        git+git@github.com:vganyn-alarstudios/sockstat-zabbix-module.git#3d5d36a1bf80b98a5c9e85bf36b3506e112bb5ef:
+VCS:        git+git@github.com:vganyn-alarstudios/sockstat-zabbix-module.git#:
 
+Source:     sockstat-zabbix-module-db2c4a8a-dirty.tar.gz
 Source1:    zbx_sockstat.c
 Source2:    Makefile
 

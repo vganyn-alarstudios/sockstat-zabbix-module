@@ -12,6 +12,7 @@ License:    GPLv2+
 URL: 		https://github.com/vicendominguez/sockstat-zabbix-module
 VCS:        {{{ git_dir_vcs }}}
 
+Source:     {{{ git_dir_pack }}}
 Source1:    zbx_sockstat.c
 Source2:    Makefile
 
